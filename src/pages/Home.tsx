@@ -27,7 +27,7 @@ const Home: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary-400 via-primary-300 to-accent-400"
         >
-          Cross-Border Payments<br />on Base Network
+          Remittances made<br />on Base Network
         </motion.h1>
         
         <motion.p 
@@ -60,7 +60,7 @@ const Home: React.FC = () => {
       {/* Features Section */}
       <section className="py-12">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Why Choose BaseRemit?</h2>
+          <h2 className="text-3xl font-bold mb-4">Why Choose GoRemit?</h2>
           <p className="text-gray-300 max-w-2xl mx-auto">
             Our platform offers several advantages over traditional remittance services.
           </p>
@@ -107,7 +107,7 @@ const Home: React.FC = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">How It Works</h2>
           <p className="text-gray-300 max-w-2xl mx-auto">
-            Sending money with BaseRemit is simple and straightforward.
+            Sending money with GoRemit is simple and straightforward.
           </p>
         </div>
         

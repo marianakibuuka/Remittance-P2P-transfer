@@ -1,0 +1,6 @@
+Transaction failed: [ { "code": "invalid_union", "unionErrors": 
+[ { "issues": [ { "code": "invalid_type", "expected": "string", "received": "object", "path": [],
+ "message": "Expected string, received object" } ], "name": "ZodError" }, { "issues":
+  [ { "code": "invalid_type", "expected": "number", "received": "object", "path": [],
+   "message": "Expected number, received object" } ], "name": "ZodError" } ],
+ "path": [], "message": "Invalid input" } ]

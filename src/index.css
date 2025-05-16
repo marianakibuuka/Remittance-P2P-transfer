@@ -1,0 +1,83 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-gradient-to-br from-dark-800 to-dark-900 text-white min-h-screen font-sans;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-dark-800 rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-700 rounded-full transition-all;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary-600;
+}
+
+/* Glass effect styles */
+.glass-card {
+  @apply bg-dark-700/70 backdrop-blur-xl border border-dark-600 rounded-xl shadow-glass;
+}
+
+.input-field {
+  @apply bg-dark-800 border border-dark-600 rounded-lg px-4 py-3 text-white outline-none focus:ring-2 focus:ring-primary-500 transition-all duration-200;
+}
+
+.btn-primary {
+  @apply bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-500 hover:to-primary-400 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-primary-500/20;
+}
+
+.btn-secondary {
+  @apply bg-dark-600 hover:bg-dark-500 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300;
+}
+
+.btn-accent {
+  @apply bg-gradient-to-r from-accent-600 to-accent-500 hover:from-accent-500 hover:to-accent-400 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-accent-500/20;
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Badge styles */
+.status-badge {
+  @apply px-3 py-1 rounded-full text-xs font-medium;
+}
+
+.status-pending {
+  @apply bg-warning-500/20 text-warning-300;
+}
+
+.status-success {
+  @apply bg-success-500/20 text-success-300;
+}
+
+.status-failed {
+  @apply bg-error-500/20 text-error-300;
+}

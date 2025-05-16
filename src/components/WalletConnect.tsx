@@ -21,19 +21,19 @@ const WalletConnect: React.FC = () => {
       name: 'MetaMask',
       icon: '🦊',
       color: 'from-orange-500 to-yellow-500',
-      connectFunction: connectWithMetamask
+      connectFunction: () => connectWithMetamask()
     },
     {
       name: 'Coinbase Wallet',
       icon: '🔵',
       color: 'from-blue-500 to-blue-600',
-      connectFunction: connectWithCoinbase
+      connectFunction: () => connectWithCoinbase()
     },
     {
       name: 'WalletConnect',
       icon: '🔗',
       color: 'from-blue-400 to-indigo-600',
-      connectFunction: connectWithWalletConnect
+      connectFunction: () => connectWithWalletConnect()
     }
   ];
 

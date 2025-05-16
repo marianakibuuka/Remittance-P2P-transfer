@@ -44,7 +44,7 @@ const Receive: React.FC = () => {
   const shareLink = () => {
     if (navigator.share) {
       navigator.share({
-        title: 'Base Remittance Payment Request',
+        title: 'Remittance Payment Request',
         text: `Send me ${amount ? amount + ' ETH' : 'crypto'} on Base Network${message ? ': ' + message : ''}`,
         url: paymentLink,
       })
@@ -58,21 +58,43 @@ const Receive: React.FC = () => {
     }
   };
 
-  // Download QR code
-  const downloadQRCode = () => {
-    const canvas = document.querySelector('#qr-code canvas') as HTMLCanvasElement;
-    if (!canvas) return;
+  // // Download QR code
+  // const downloadQRCode = () => {
+  //   const canvas = document.querySelector('#qr-code canvas') as HTMLCanvasElement;
+  //   if (!canvas) return;
 
-    const pngUrl = canvas.toDataURL('image/png');
-    const downloadLink = document.createElement('a');
-    downloadLink.href = pngUrl;
-    downloadLink.download = 'baseremit-payment.png';
-    document.body.appendChild(downloadLink);
-    downloadLink.click();
-    document.body.removeChild(downloadLink);
-    toast.success("QR code downloaded successfully!");
-  };
+  //   const pngUrl = canvas.toDataURL('image/png');
+  //   const downloadLink = document.createElement('a');
+  //   downloadLink.href = pngUrl;
+  //   downloadLink.download = 'baseremit-payment.png';
+  //   document.body.appendChild(downloadLink);
+  //   downloadLink.click();
+  //   document.body.removeChild(downloadLink);
+  //   toast.success("QR code downloaded successfully!");
+  // };
 
+   const downloadQRCode = () => {
+  const svgElement = document.querySelector('#qr-code svg');
+  if (!svgElement) return;
+
+  const serializer = new XMLSerializer();
+  const svgBlob = new Blob(
+    [serializer.serializeToString(svgElement)], 
+    { type: 'image/svg+xml' }
+  );
+  
+  const url = URL.createObjectURL(svgBlob);
+  const downloadLink = document.createElement('a');
+  downloadLink.href = url;
+  downloadLink.download = 'baseremit-payment.svg'; // Save as SVG
+  document.body.appendChild(downloadLink);
+  downloadLink.click();
+  document.body.removeChild(downloadLink);
+  URL.revokeObjectURL(url);
+  toast.success("QR code downloaded as SVG!");
+};
+
+   
   return (
     <div className="max-w-2xl mx-auto">
       <motion.div

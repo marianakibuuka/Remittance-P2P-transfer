@@ -123,25 +123,25 @@ const Profile: React.FC = () => {
           )}
 
           <div className="space-y-3">
-            <h3 className="text-sm font-medium text-gray-300 mb-2">Quick Actions</h3>
-            <button className="w-full text-left px-4 py-3 bg-dark-700 hover:bg-dark-600 rounded-lg transition-colors flex items-center gap-3">
+            {/* //<h3 className="text-sm font-medium text-gray-300 mb-2">Quick Actions</h3> */}
+            {/* <button className="w-full text-left px-4 py-3 bg-dark-700 hover:bg-dark-600 rounded-lg transition-colors flex items-center gap-3">
               <div className="p-1.5 bg-dark-600 rounded-lg">
                 <History size={16} className="text-primary-400" />
               </div>
               <span>View Transaction History</span>
-            </button>
-            <button className="w-full text-left px-4 py-3 bg-dark-700 hover:bg-dark-600 rounded-lg transition-colors flex items-center gap-3">
+            </button> */}
+            {/* <button className="w-full text-left px-4 py-3 bg-dark-700 hover:bg-dark-600 rounded-lg transition-colors flex items-center gap-3">
               <div className="p-1.5 bg-dark-600 rounded-lg">
                 <Download size={16} className="text-primary-400" />
               </div>
               <span>Export Transaction Data</span>
-            </button>
-            <button className="w-full text-left px-4 py-3 bg-dark-700 hover:bg-dark-600 rounded-lg transition-colors flex items-center gap-3">
+            </button> */}
+            {/* <button className="w-full text-left px-4 py-3 bg-dark-700 hover:bg-dark-600 rounded-lg transition-colors flex items-center gap-3">
               <div className="p-1.5 bg-dark-600 rounded-lg">
                 <Cog size={16} className="text-primary-400" />
               </div>
               <span>Settings</span>
-            </button>
+            </button> */}
           </div>
         </motion.div>
 
@@ -153,7 +153,7 @@ const Profile: React.FC = () => {
           className="glass-card p-6 col-span-1 md:col-span-2"
         >
           {/* Connected Apps Section */}
-          <div className="mb-8">
+          {/* <div className="mb-8">
             <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
               <Wallet size={20} className="text-primary-400" />
               <span>Connected Applications</span>
@@ -191,7 +191,7 @@ const Profile: React.FC = () => {
                 <p className="text-gray-400">No applications connected to your wallet</p>
               </div>
             )}
-          </div>
+          </div> */}
 
           {/* Security Tips */}
           <div>

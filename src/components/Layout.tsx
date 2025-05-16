@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Outlet, useLocation, Link } from 'react-router-dom';
 import { useAddress, useDisconnect } from '@thirdweb-dev/react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRightLeft, Send, QrCode, Clock, User, Menu, X, LogOut, Wallet } from 'lucide-react';
+import { ArrowRightLeft, Send, QrCode, User, Menu, X, LogOut, Wallet } from 'lucide-react';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -34,7 +34,7 @@ const Navbar = () => {
             <ArrowRightLeft size={24} className="text-white" />
           </div>
           <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-accent-400">
-            BaseRemit
+            GoRemit
           </span>
         </Link>
 
@@ -148,16 +148,16 @@ const Footer = () => {
               <ArrowRightLeft size={16} className="text-white" />
             </div>
             <span className="text-sm font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-accent-400">
-              BaseRemit
+              GoRemit
             </span>
           </div>
           
           <div className="text-center md:text-right">
             <p className="text-sm text-gray-400">
-              Built on the <span className="text-primary-400">Base</span> network
+             Next-gen transfers, <span className="text-primary-400">Fueled by</span> Base
             </p>
             <p className="text-xs text-gray-500 mt-1">
-              &copy; {new Date().getFullYear()} BaseRemit. All rights reserved.
+              &copy; {new Date().getFullYear()} GoRemit. All rights reserved.
             </p>
           </div>
         </div>

@@ -46,7 +46,7 @@ const Send: React.FC = () => {
   };
 
   const { contract } = useContract(
-    "0xA669AeCE1A07A89F4BF76079c9CCd86fEA291613",
+    "0x1d10E2239c95468c5e9154633132C97e0858Fe19",
      [
 	{
 		"anonymous": false,
@@ -644,12 +644,12 @@ const Send: React.FC = () => {
 
           <div className="flex gap-4">
             <a 
-              href={`https://sepolia.basescan.org/tx/${txHash}`}
+              href={`https://basescan.org/tx/${txHash}`}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary flex-1 flex items-center justify-center gap-2"
             >
-              <span>View on BaseSepolia</span>
+              <span>View on Base Mainnet</span>
               <ArrowRightCircle size={18} />
             </a>
             <button

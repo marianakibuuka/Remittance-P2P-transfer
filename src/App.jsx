@@ -32,8 +32,7 @@ function App() {
             <Send />
           </ProtectedRoute>
         } />
-        
-        <Route path="/receive" element={
+                <Route path="/receive" element={
           <ProtectedRoute>
             <Receive />
           </ProtectedRoute>

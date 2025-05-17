@@ -9,7 +9,13 @@ import {
 import { motion } from 'framer-motion';
 import { Wallet, AlertCircle } from 'lucide-react';
 
-const WalletConnect: React.FC = () => {
+//added 
+interface WalletConnectProps {
+  onClick: () => void;
+}
+
+
+
   const connectWithMetamask = useMetamask();
   const connectWithCoinbase = useCoinbaseWallet();
   const connectWithWalletConnect = useWalletConnect();
@@ -40,6 +46,9 @@ const WalletConnect: React.FC = () => {
   const truncateAddress = (address: string) => {
     return `${address.slice(0, 6)}...${address.slice(-4)}`;
   };
+  //added
+   const WalletConnect: React.FC<WalletConnectProps> = ({ onClick }) => 
+  {
 
   return (
     <div className="glass-card p-6 max-w-md mx-auto">

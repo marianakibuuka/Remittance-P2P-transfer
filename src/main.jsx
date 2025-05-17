@@ -1,12 +1,28 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-import { ThirdwebProvider } from '@thirdweb-dev/react';
+// import { ThirdwebProvider } from '@thirdweb-dev/react';
+
+import { ThirdwebProvider, coinbaseWallet, metamaskWallet, walletConnect } from '@thirdweb-dev/react';
+
 import { ToastContainer } from 'react-toastify';
 import App from './App';
 import './index.css';
 
 import 'react-toastify/dist/ReactToastify.css';
+import { createThirdwebClient } from "thirdweb";
+ 
+// const client = createThirdwebClient({
+//   // use `secretKey` for server side or script usage
+//   secretKey: process.env.THIRDWEB_SECRET_KEY,
+
+  const client = createThirdwebClient({
+  clientId: import.meta.env.VITE_THIRDWEB_CLIENT_ID
+  // console.log("ClientId:", import.meta.env.VITE_THIRDWEB_CLIENT_ID);
+});
+
+
+
 
 //Base network configuration
 const activeChain = {
@@ -40,8 +56,20 @@ const activeChain = {
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ThirdwebProvider
-      activeChain={activeChain}
-      clientId={import.meta.env.VITE_THIRDWEB_CLIENT_ID || ""}
+       activeChain = { activeChain }
+      supportedWallets={[
+        metamaskWallet(),
+        coinbaseWallet(),
+        walletConnect(),
+      ]}
+
+      // clientId={import.meta.env.VITE_THIRDWEB_CLIENT_ID || ""}
+
+       clientId={import.meta.env.VITE_THIRDWEB_CLIENT_ID}
+      authConfig={{
+        authUrl: "/api/auth", // Needed for embedded wallets
+        domain: process.env.VITE_AUTH_DOMAIN || "http://localhost:5173",
+      }}
     >
       <BrowserRouter>
         <App />
